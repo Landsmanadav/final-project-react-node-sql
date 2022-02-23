@@ -1,23 +1,22 @@
-import logo from './logo.svg';
+import React, { useEffect, useState } from 'react'
+import { BrowserRouter as Router } from 'react-router-dom'
+import Header from './comp/Header'
+import Main from './comp/Main'
 import './App.css';
-
-function App() {
+function App({ children }) {
+  const [update, setUpdate] = useState(false)
+  const [auth, setAuth] = useState(false)
+  useEffect(() => {
+    if (localStorage.username) {
+      setAuth(true)
+    }
+  }, [])
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Router>
+        <Header setUpdate={setUpdate} update={update} auth={auth} setAuth={setAuth} />
+        <Main setUpdate={setUpdate} update={update} auth={auth} setAuth={setAuth} />
+      </Router>
     </div>
   );
 }
