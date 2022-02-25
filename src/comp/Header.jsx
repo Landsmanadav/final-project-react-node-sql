@@ -34,7 +34,7 @@ export default function Header({ auth, setAuth }) {
         const res = await fetch('https://final-project-react-node-sql.herokuapp.com/users/logout', {
             method: "delete",
             credentials: 'include',
-            headers: { 'content-type': 'application/json', "Access-Control-Allow-Origin": "*" }
+            headers: { 'content-type': 'application/json' }
         })
         const data = await res.json()
         setAuth(true)

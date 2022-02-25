@@ -53,8 +53,8 @@ export default function Analytics({ allVacations, update }) {
 
     useEffect(() => {
         (async () => {
-            const res2 = await fetch(`https://final-project-react-node-sql.herokuapp.com/vacations//likes/likes`,{
-                headers: { 'content-type': 'application/json', "Access-Control-Allow-Origin": "*" }
+            const res2 = await fetch(`https://final-project-react-node-sql.herokuapp.com/vacations//likes/likes`, {
+                headers: { 'content-type': 'application/json' }
             })
             const data2 = await res2.json()
             setLikedVactionsNumber(data2)
