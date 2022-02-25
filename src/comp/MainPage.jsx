@@ -5,20 +5,17 @@ export default function MainPage() {
     const navigate = useNavigate()
     useEffect(() => {
         if (!localStorage.username) {
-            navigate("/")
+            navigate("/login")
         } else if (localStorage.username == "ADMIN") {
             navigate('/admin')
         } else {
-            navigate('/vacations')
+            navigate('/vacations/' + localStorage.username)
         }
     }, [])
 
-
-
     return (
         <div>
-            MAINPAGE
-            FOR UNREGISTERD USERS
+
         </div>
     )
 }

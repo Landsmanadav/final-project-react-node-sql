@@ -31,7 +31,7 @@ function Copyright(props) {
 
 const theme = createTheme()
 
-export default function Register() {
+export default function Register(setAuth) {
     // Register state ==============================
     const [registerFn, setRegisterFn] = useState("")
     const [registerLn, setRegisterLn] = useState("")
@@ -71,6 +71,7 @@ export default function Register() {
             credentials: 'include'
         })
         const data = await res.json()
+        setAuth(true)
         console.log(data)
         if (data.err) {
             alert(data.err)
