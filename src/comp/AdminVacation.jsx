@@ -73,7 +73,7 @@ export default function AdminVacation({ vacation, handleDelete, setUpdate }) {
         setExpanded(!expanded);
     }
     const handleEdit = async () => {
-        const res = await fetch(`http://https://final-project-react-node-sql.herokuapp.com/vacations/admin/update`, {
+        const res = await fetch(`https://final-project-react-node-sql.herokuapp.com/vacations/admin/update`, {
             method: "put",
             credentials: 'include',
             headers: { 'content-type': 'application/json' },

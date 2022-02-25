@@ -31,7 +31,7 @@ export default function Vacation({ vacation, likedVacations, setUpdate }) {
     }
     const handleChange = async () => {
         if (likedVacations.map(item => item.id).includes(vacation.id)) {
-            const res = await fetch(`http://https://final-project-react-node-sql.herokuapp.com/vacations/unlike/${localStorage.username}/${vacation.id}`, {
+            const res = await fetch(`https://final-project-react-node-sql.herokuapp.com/vacations/unlike/${localStorage.username}/${vacation.id}`, {
                 method: "delete",
                 credentials: 'include'
             })
@@ -41,7 +41,7 @@ export default function Vacation({ vacation, likedVacations, setUpdate }) {
             }
             setUpdate(up => !up)
         } else {
-            const res = await fetch(`http://https://final-project-react-node-sql.herokuapp.com/vacations/like/${localStorage.username}/${vacation.id}`, {
+            const res = await fetch(`https://final-project-react-node-sql.herokuapp.com/vacations/like/${localStorage.username}/${vacation.id}`, {
                 method: "put",
                 credentials: 'include'
             })

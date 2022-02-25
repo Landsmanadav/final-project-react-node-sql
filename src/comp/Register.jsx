@@ -64,7 +64,7 @@ export default function Register() {
 
     // Register ================================================================
     const handleClickRegister = async () => {
-        const res = await fetch('http://https://final-project-react-node-sql.herokuapp.com/users/register', {
+        const res = await fetch('https://final-project-react-node-sql.herokuapp.com/users/register', {
             method: "post",
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify({ fn: registerFn, ln: registerLn, username: registerUsername, password: registerPassword }),
