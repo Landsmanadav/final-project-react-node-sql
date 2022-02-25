@@ -33,7 +33,8 @@ export default function Vacation({ vacation, likedVacations, setUpdate }) {
         if (likedVacations.map(item => item.id).includes(vacation.id)) {
             const res = await fetch(`https://final-project-react-node-sql.herokuapp.com/vacations/unlike/${localStorage.username}/${vacation.id}`, {
                 method: "delete",
-                credentials: 'include'
+                credentials: 'include',
+                headers: { 'content-type': 'application/json', "Access-Control-Allow-Origin": "*" }
             })
             const data = await res.json()
             if (data.err) {
@@ -43,7 +44,8 @@ export default function Vacation({ vacation, likedVacations, setUpdate }) {
         } else {
             const res = await fetch(`https://final-project-react-node-sql.herokuapp.com/vacations/like/${localStorage.username}/${vacation.id}`, {
                 method: "put",
-                credentials: 'include'
+                credentials: 'include',
+                headers: { 'content-type': 'application/json', "Access-Control-Allow-Origin": "*" }
             })
             const data = await res.json()
             if (data.err) {

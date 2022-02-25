@@ -66,7 +66,7 @@ export default function Register() {
     const handleClickRegister = async () => {
         const res = await fetch('https://final-project-react-node-sql.herokuapp.com/users/register', {
             method: "post",
-            headers: { 'content-type': 'application/json' },
+            headers: { 'content-type': 'application/json', "Access-Control-Allow-Origin": "*" },
             body: JSON.stringify({ fn: registerFn, ln: registerLn, username: registerUsername, password: registerPassword }),
             credentials: 'include'
         })

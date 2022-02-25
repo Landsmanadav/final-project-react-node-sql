@@ -54,7 +54,7 @@ export default function LoginRegister({ setAuth, setUpdate }) {
 
         const res = await fetch('https://final-project-react-node-sql.herokuapp.com/users/login', {
             method: "post",
-            headers: { 'content-type': 'application/json' },
+            headers: { 'content-type': 'application/json', "Access-Control-Allow-Origin": "*" },
             body: JSON.stringify({ username, password }),
             credentials: 'include'
         })

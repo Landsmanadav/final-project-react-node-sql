@@ -76,7 +76,7 @@ export default function AdminVacation({ vacation, handleDelete, setUpdate }) {
         const res = await fetch(`https://final-project-react-node-sql.herokuapp.com/vacations/admin/update`, {
             method: "put",
             credentials: 'include',
-            headers: { 'content-type': 'application/json' },
+            headers: { 'content-type': 'application/json', "Access-Control-Allow-Origin": "*" },
             body: JSON.stringify({
                 id: vacation.id,
                 destination: newDestination,

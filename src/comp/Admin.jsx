@@ -84,14 +84,16 @@ export default function Admin({ setUpdate, update, allVacations, setAllVacations
     const handleDelete = async (v) => {
         const res = await fetch(`https://final-project-react-node-sql.herokuapp.com/vacations/admin/likes/${v.id}`, {
             method: "delete",
-            credentials: 'include'
+            credentials: 'include',
+            headers: { 'content-type': 'application/json', "Access-Control-Allow-Origin": "*" }
         })
         const data = await res.json()
         console.log(data)
         setUpdate(up => !up)
         const res1 = await fetch(`https://final-project-react-node-sql.herokuapp.com/vacations/admin/${v.id}`, {
             method: "delete",
-            credentials: 'include'
+            credentials: 'include',
+            headers: { 'content-type': 'application/json', "Access-Control-Allow-Origin": "*" }
         })
         const data1 = await res1.json()
         console.log(data1)
