@@ -12,7 +12,7 @@ export default function Main({ update, setUpdate, auth, setAuth }) {
     // FETCH All VACATIONS ===================================================
     useEffect(() => {
         (async () => {
-            const res2 = await fetch(`http://localhost:10000/vacations`)
+            const res2 = await fetch(`http://https://final-project-react-node-sql.herokuapp.com/vacations`)
             const data2 = await res2.json()
             setAllVacations(data2)
         })();

@@ -31,7 +31,7 @@ export default function Header({ auth, setAuth }) {
         setAnchorElNav(null)
     }
     const handleChange = async (event) => {
-        const res = await fetch('http://localhost:10000/users/logout', {
+        const res = await fetch('http://https://final-project-react-node-sql.herokuapp.com/users/logout', {
             method: "delete",
             credentials: 'include'
         })

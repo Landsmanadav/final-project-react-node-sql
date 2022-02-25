@@ -16,7 +16,7 @@ export default function Vacations({ setUpdate, update, allVacations }) {
 
     useEffect(() => {
         (async () => {
-            const res = await fetch(`http://localhost:10000/vacations/${username}`)
+            const res = await fetch(`http://https://final-project-react-node-sql.herokuapp.com/vacations/${username}`)
             const data = await res.json()
             setLikedVacations(data)
         })()
@@ -25,7 +25,7 @@ export default function Vacations({ setUpdate, update, allVacations }) {
     // FETCH All LIKED VACATIONS ===================================================
     useEffect(() => {
         (async () => {
-            const res2 = await fetch(`http://localhost:10000/vacations//likes/likes`)
+            const res2 = await fetch(`http://https://final-project-react-node-sql.herokuapp.com/vacations//likes/likes`)
             const data2 = await res2.json()
             setLikedVactionsNumber(data2)
         })()

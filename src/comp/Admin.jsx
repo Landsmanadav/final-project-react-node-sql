@@ -59,7 +59,7 @@ export default function Admin({ setUpdate, update, allVacations, setAllVacations
     const navigate = useNavigate()
 
     const handleAdd = async () => {
-        const res = await fetch(`http://localhost:10000/vacations/admin/add`, {
+        const res = await fetch(`http://https://final-project-react-node-sql.herokuapp.com/vacations/admin/add`, {
             method: "put",
             credentials: 'include',
             headers: { 'content-type': 'application/json' },
@@ -82,14 +82,14 @@ export default function Admin({ setUpdate, update, allVacations, setAllVacations
 
 
     const handleDelete = async (v) => {
-        const res = await fetch(`http://localhost:10000/vacations/admin/likes/${v.id}`, {
+        const res = await fetch(`http://https://final-project-react-node-sql.herokuapp.com/vacations/admin/likes/${v.id}`, {
             method: "delete",
             credentials: 'include'
         })
         const data = await res.json()
         console.log(data)
         setUpdate(up => !up)
-        const res1 = await fetch(`http://localhost:10000/vacations/admin/${v.id}`, {
+        const res1 = await fetch(`http://https://final-project-react-node-sql.herokuapp.com/vacations/admin/${v.id}`, {
             method: "delete",
             credentials: 'include'
         })

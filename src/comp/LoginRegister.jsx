@@ -52,7 +52,7 @@ export default function LoginRegister({ setAuth, setUpdate }) {
     // Login ================================================================
     const handleClickLogin = async () => {
 
-        const res = await fetch('http://localhost:10000/users/login', {
+        const res = await fetch('http://https://final-project-react-node-sql.herokuapp.com/users/login', {
             method: "post",
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify({ username, password }),
