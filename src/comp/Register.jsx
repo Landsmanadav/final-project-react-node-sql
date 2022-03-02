@@ -31,7 +31,7 @@ function Copyright(props) {
 
 const theme = createTheme()
 
-export default function Register(setAuth) {
+export default function Register({ setAuth }) {
     // Register state ==============================
     const [registerFn, setRegisterFn] = useState("")
     const [registerLn, setRegisterLn] = useState("")
@@ -49,14 +49,6 @@ export default function Register(setAuth) {
         setRegisterLn(data.get('lastName'))
         setRegisterUsername(data.get('username'))
         setRegisterPassword(data.get('password'))
-        // eslint-disable-next-line no-console
-        console.log({
-            username: data.get('username'),
-            password: data.get('password'),
-            firstName: data.get('firstName'),
-            lastName: data.get('lastName'),
-        })
-        // setUpdate(up => !up)
         if (registerFn && registerLn && registerUsername && registerPassword && event.type == "submit") {
             handleClickRegister()
         }
@@ -72,7 +64,6 @@ export default function Register(setAuth) {
         })
         const data = await res.json()
         setAuth(true)
-        console.log(data)
         if (data.err) {
             alert(data.err)
         } else {

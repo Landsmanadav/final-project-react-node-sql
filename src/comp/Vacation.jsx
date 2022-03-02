@@ -24,7 +24,6 @@ const ExpandMore = styled((props) => {
 }))
 
 export default function Vacation({ vacation, likedVacations, setUpdate }) {
-    console.log(vacation)
     const [expanded, setExpanded] = React.useState(false)
     const handleExpandClick = () => {
         setExpanded(!expanded)

@@ -49,7 +49,6 @@ export const options = {
 
 export default function Analytics({ allVacations, update }) {
     const [likedVactionsNumber, setLikedVactionsNumber] = useState([])
-    // console.log(likedVactionsNumber)
 
     useEffect(() => {
         (async () => {
@@ -66,7 +65,6 @@ export default function Analytics({ allVacations, update }) {
         const numberOfLikes = likedVactionsNumber.filter(item => item.destination_id == vac.id)
         vac.likenumber = numberOfLikes.length
     }
-    console.log(userVacationsArr.map(v => v.likenumber))
 
     const labels = userVacationsArr.filter(v => v.likenumber > 0).map(v => v.destionation);
     const numberOfLikes = userVacationsArr.filter(v => v.likenumber > 0).map(v => v.likenumber)

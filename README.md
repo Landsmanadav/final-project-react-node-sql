@@ -1,4 +1,4 @@
-# Nadav Landesman Final React&Node&SQL Project
+# Nadav Landesman Final React & Node & SQL Project
 ### John Bryce Training
 Our project was to build a website that shows data on vacations 
 

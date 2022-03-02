@@ -26,7 +26,6 @@ const Item = styled(Paper)(({ theme }) => ({
 
 export default function Admin({ setUpdate, update, allVacations, setAllVacations }) {
     // IF NOT ADMIN 
-    console.log(localStorage.username)
     useEffect(() => {
         if (!localStorage.username === "ADMIN" || localStorage.username == undefined) {
             return navigate('/')
@@ -42,19 +41,6 @@ export default function Admin({ setUpdate, update, allVacations, setAllVacations
     const newImageUrl = useRef("https://images.unsplash.com/photo-1513002749550-c59d786b8e6c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8c2t5fGVufDB8fDB8fA%3D%3D&w=1000&q=80")
     const newPrice = useRef("")
     const newAbout = useRef("")
-
-    console.log(newDestination.current)
-    console.log(newStartDate.current)
-    console.log(newPrice.current)
-    console.log(newImageUrl.current)
-    console.log(newAbout.current)
-
-    // const [newDestination,setNewDestination] = useState("")
-    // const [newStartDate, setNewStartDate] = useState("")
-    // const [newEndDate, setNewEndDate] = useState("")
-    // const [newImageUrl, setNewImageUrl] = useState()
-    // const [newPrice, setNewPrice] = useState("")
-    // const [newAbout, setNewAbout] = useState("")
 
     const navigate = useNavigate()
 
