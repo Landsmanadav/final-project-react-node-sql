@@ -61,6 +61,8 @@ export default function Analytics({ allVacations, update }) {
     }, [update])
     const userVacationsArr = []
     userVacationsArr.push(...allVacations)
+    userVacationsArr.sort((a, b) => b.likenumber - a.likenumber)
+    console.log(userVacationsArr)
     for (const vac of userVacationsArr) {
         const numberOfLikes = likedVactionsNumber.filter(item => item.destination_id == vac.id)
         vac.likenumber = numberOfLikes.length
@@ -68,6 +70,7 @@ export default function Analytics({ allVacations, update }) {
 
     const labels = userVacationsArr.filter(v => v.likenumber > 0).map(v => v.destionation);
     const numberOfLikes = userVacationsArr.filter(v => v.likenumber > 0).map(v => v.likenumber)
+    console.log(numberOfLikes)
     const data = {
         labels,
         datasets: [
